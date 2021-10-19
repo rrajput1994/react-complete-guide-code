@@ -16,23 +16,6 @@ function Expenses(props) {
     return expense.date.getFullYear().toString() === selectedYear;
   });
 
-  // another way to conditional rendering
-
-  // let expenseContent = <p>No Expenses Fond</p>;
-
-  // if (filterExpense.length > 0) {
-  //   expenseContent = filterExpense.map((expense) => {
-  //     return (
-  //       <ExpenseItem
-  //         key={expense.id}
-  //         title={expense.title}
-  //         amount={expense.amount}
-  //         date={expense.date}
-  //       />
-  //     );
-  //   });
-  // }
-
   return (
     <div>
       <Card className="expenses">
@@ -44,25 +27,6 @@ function Expenses(props) {
         <ExpenseChart expenses={filterExpense} />
 
         <ExpensesList filterExpenses={filterExpense} />
-
-        {/* {expenseContent} */}
-
-        {/* one way to conditional rendering */}
-
-        {/* {filterExpense.length === 0 ? (
-          <p>No Expenses Found!</p>
-        ) : (
-          filterExpense.map((expense) => {
-            return (
-              <ExpenseItem
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-              />
-            );
-          })
-        )} */}
       </Card>
     </div>
   );

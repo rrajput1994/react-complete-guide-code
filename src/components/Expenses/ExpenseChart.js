@@ -53,6 +53,11 @@ const ExpenseChart = (props) => {
     },
   ];
 
+  for (const expense of props.expenses) {
+    let months = expense.date.getMonth();
+    chartDataPoints[months].value += expense.amount;
+  }
+
   return <Chart chartDataPoints={chartDataPoints} />;
 };
 
