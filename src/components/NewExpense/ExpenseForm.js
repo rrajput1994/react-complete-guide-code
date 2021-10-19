@@ -20,7 +20,7 @@ const ExpenseForm = (props) => {
       id: Date.now(),
       title: values.title,
       amount: values.amount,
-      date: values.date,
+      date: new Date(values.date),
     };
     console.log(newValues);
     props.onSubmitNewExpense(newValues);
