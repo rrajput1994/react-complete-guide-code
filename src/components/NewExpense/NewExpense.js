@@ -12,6 +12,10 @@ const NewExpense = (props) => {
     props.onSubmitFromAppProps(newExpenseData);
   };
 
+  const onSubmitBtnClickHandler = () => {
+    setShow(true);
+  };
+
   const onCancelBtnClickHandler = () => {
     setShow(true);
   };
@@ -24,6 +28,7 @@ const NewExpense = (props) => {
         </button>
       ) : (
         <ExpenseForm
+          onSubmitBtnClick={onSubmitBtnClickHandler}
           onCancelBtnClick={onCancelBtnClickHandler}
           onSubmitNewExpense={onSubmitNewExpenseHandler}
         />

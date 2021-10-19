@@ -25,7 +25,7 @@ const ExpenseForm = (props) => {
     console.log(newValues);
     props.onSubmitNewExpense(newValues);
     setValues({ title: "", amount: "", date: "" });
-    props.onShowHandler();
+    props.onSubmitBtnClick();
   };
 
   const onCancelBtnClick = () => {
