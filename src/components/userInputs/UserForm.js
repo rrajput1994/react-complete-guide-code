@@ -3,44 +3,48 @@ import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
 import styles from "./UserForm.module.css";
 const UserForm = (props) => {
-  const [users, setUsers] = useState({
-    username: "",
-    userage: "",
-  });
+  // const [users, setUsers] = useState({
+  //   username: "",
+  //   userage: "",
+  // });
+
+  const [userName, setUserName] = useState("");
+  const [userAge, setUserAge] = useState("");
 
   const [isValidInput, setIsInvalidInput] = useState(true);
 
-  const onInputChangeHandler = (e) => {
-    const { name, value } = e.target;
-
-    if (value.length > 0) {
+  const onInputNameChangeHandler = (e) => {
+    setUserName(e.target.value);
+    if (e.target.value.length > 0) {
       setIsInvalidInput(true);
     }
-    setUsers((prevUsers) => {
-      return { ...prevUsers, [name]: value };
-    });
+  };
+  const onInputAgeChangeHandler = (e) => {
+    setUserAge(e.target.value);
+    if (e.target.value.length > 0) {
+      setIsInvalidInput(true);
+    }
   };
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
-    // console.log(
-    //   "UserName :" + users.username + "And" + "Age :" + users.userage
-    // );
 
-    if (users.username === "" || users.userage === "") {
+    if (userName === "" || userAge === "") {
       setIsInvalidInput(false);
+      props.onShowModalClick(true);
+      props.onErrorHandler("Name and Age Should not be empty!");
       return;
     }
 
-    const newEnteredValue = {
-      userId: Date.now(),
-      userName: users.username,
-      userAge: users.userage,
-    };
+    if (+userAge < 1) {
+      props.onErrorHandler("Age Should not less than 1 year!");
+      return;
+    }
 
-    props.onFormSubmit(newEnteredValue);
+    props.onFormSubmit(userName, userAge);
 
-    setUsers({ username: "", userage: "" });
+    setUserName("");
+    setUserAge("");
   };
 
   return (
@@ -56,8 +60,8 @@ const UserForm = (props) => {
             <input
               type="text"
               name="username"
-              value={users.username}
-              onChange={onInputChangeHandler}
+              value={userName}
+              onChange={onInputNameChangeHandler}
               autoComplete="off"
             />
           </div>
@@ -66,8 +70,8 @@ const UserForm = (props) => {
             <input
               type="number"
               name="userage"
-              value={users.userage}
-              onChange={onInputChangeHandler}
+              value={userAge}
+              onChange={onInputAgeChangeHandler}
               autoComplete="off"
             />
           </div>

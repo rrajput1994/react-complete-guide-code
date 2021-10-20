@@ -10,6 +10,9 @@ ul.user-list li {
   padding: 10px;
   color: #333;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 ul.user-list li:last-child {
   margin-bottom: 0;
@@ -17,4 +20,13 @@ ul.user-list li:last-child {
 .No-records {
   text-align: center;
   margin: 0;
+}
+
+ul.user-list li h5 {
+  margin: 0;
+  padding: 0;
+}
+ul.user-list li span {
+  color: red;
+  cursor: pointer;
 }

@@ -1,0 +1,24 @@
+.modal {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.modal-header {
+  background: #c33a22;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+}
+.modal-body {
+  padding: 15px;
+}
+.modal-footer {
+  padding: 8px 15px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
