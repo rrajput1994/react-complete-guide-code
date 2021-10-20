@@ -1,7 +1,11 @@
 import React from "react";
 import "./BackDrop.css";
 const BackDrop = (props) => {
-  return <div className="back-drop"></div>;
+  const onModalCloseHandler = () => {
+    props.onModalCloseBackDrop(false);
+  };
+
+  return <div className="back-drop" onClick={onModalCloseHandler}></div>;
 };
 
 export default BackDrop;

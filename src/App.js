@@ -56,8 +56,12 @@ function App() {
     setErrorMessage(message);
   };
 
-  const onModalcloseHandler = (closeValue) => {
-    setShowModal(closeValue);
+  const onModalcloseHandler = (closeValueModal) => {
+    setShowModal(closeValueModal);
+  };
+
+  const onModalCloseBackDrop = (closeValueBackDrop) => {
+    setShowModal(closeValueBackDrop);
   };
 
   return (
@@ -76,7 +80,7 @@ function App() {
           onModalClose={onModalcloseHandler}
         />
       )}
-      {showModal && <BackDrop />}
+      {showModal && <BackDrop onModalCloseBackDrop={onModalCloseBackDrop} />}
     </div>
   );
 }
