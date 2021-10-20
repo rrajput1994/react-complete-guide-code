@@ -1,0 +1,25 @@
+.form-controls > div {
+  margin-bottom: 20px;
+}
+.form-controls label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+.form-controls.invalid label {
+  color: red;
+}
+
+.form-controls input {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.form-controls input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.form-controls.invalid input {
+  border-color: red;
+  background-color: rgb(223, 173, 173);
+}

@@ -1,0 +1,20 @@
+.user-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.user-list li {
+  border: 1px solid #666;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #333;
+  font-size: 14px;
+}
+ul.user-list li:last-child {
+  margin-bottom: 0;
+}
+.No-records {
+  text-align: center;
+  margin: 0;
+}
