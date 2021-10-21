@@ -28,7 +28,7 @@ function App() {
   // const [users, setUsers] = useState(Dummy_users);
 
   const [showModal, setShowModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState([]);
 
   const [users, setUsers] = useState([]);
 
@@ -52,8 +52,10 @@ function App() {
     setShowModal(mValue);
   };
 
-  const onErrormessageHandler = (message) => {
-    setErrorMessage(message);
+  const onErrormessageHandler = (eTitle, eMessage) => {
+    setErrorMessage(() => {
+      return { title: eTitle, message: eMessage };
+    });
   };
 
   const onModalcloseHandler = (closeValueModal) => {
@@ -75,8 +77,8 @@ function App() {
 
       {showModal && (
         <Modal
-          title="Invalid Input"
-          messageBody={errorMessage}
+          title={errorMessage.title}
+          messageBody={errorMessage.message}
           onModalClose={onModalcloseHandler}
         />
       )}
