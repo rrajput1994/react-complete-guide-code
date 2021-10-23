@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 const Cart = (props) => {
+  console.log(props.mealItems);
   return (
     <Modal onModalClose={props.onModalClose}>
       <ul className={classes["cart-items"]}>
