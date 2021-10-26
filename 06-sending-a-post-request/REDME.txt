@@ -1,0 +1,5 @@
+Firebase : Firebase is a service providered by Google, which we can use without 
+writing any code. Unlike the name implies, it's not some kind of database. 
+it is backend that comes together with a database a complete rest API to which
+we can send request.
+
