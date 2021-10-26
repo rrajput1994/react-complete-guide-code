@@ -1,5 +1,16 @@
+
+Learned how to post data using dummy api that is Firebase. 
+
 Firebase : Firebase is a service providered by Google, which we can use without 
 writing any code. Unlike the name implies, it's not some kind of database. 
 it is backend that comes together with a database a complete rest API to which
 we can send request.
+
+posting data to the server using fetch method we have to pass to arguments to the fetch method
+one is API url weher we want to send data and second is an object with some key values, like
+method: that is by defautl "GET" but we use "POST" for sending data.
+body: content that we want to send over the server like it could be array of form data submitted.
+headers: {
+  "Content-Type": "application/json"
+}
 
