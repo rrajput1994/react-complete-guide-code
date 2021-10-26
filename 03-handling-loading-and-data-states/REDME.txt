@@ -1,1 +1,8 @@
 
+In the brach I learned things like:
+
+1. How to replace then block with async and await from the fetch method. this reduces the code complexcity.
+2. managing isLoding state I am able to use conditional rendering of the component. while fetching data from the
+server if takes time than we can add a loader for better user interface.
+
+3. Learned how to hanlde errors using try and catch blocks.
