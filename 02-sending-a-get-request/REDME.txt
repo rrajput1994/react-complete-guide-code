@@ -2,3 +2,4 @@ Sending request to the server and fetch the data using fetch method
 
 fetch is a built in method of js it take api url as argument and send the response as promise that could be
 fullfil or reject. 
+ here I learned how to send http resquest to server
