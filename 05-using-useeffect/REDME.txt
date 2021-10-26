@@ -1,1 +1,7 @@
 
+Learned fetched data show once page load and achive this using useEffect hook, called the fetchMoviesHandler function inside
+useEffect. for dependancies I just passed handler funtion because useEffect is depends on that handler function. but while
+passing handler function as dependency to useEffect it take infinite loop, because the function passed as object that reference type 
+so for handling the and stop unneccessary calls of the handler function I just used useCallback hook, just wrapped the handler function inside
+useCallback and pass the empty array as second argument as denpendeny.
+
